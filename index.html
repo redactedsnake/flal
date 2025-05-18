@@ -2,6 +2,9 @@
   window.onload = function () {
     const urlParams = new URLSearchParams(window.location.search);
     const message = urlParams.get("msg") || decodeURIComponent(location.hash.slice(1));
-    if (message) alert(message);
+    if (message) {
+      alert(message);
+      window.close(); // Only works if page was opened via window.open()
+    }
   };
 </script>
